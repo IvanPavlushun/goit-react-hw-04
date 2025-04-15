@@ -7,6 +7,8 @@ import Loader from "./components/Loader/Loader";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
+import { Toaster } from 'react-hot-toast';
+
 
 const App = () => {
   const [img, setImg] = useState([]);
@@ -98,6 +100,7 @@ const App = () => {
 
   return (
     <div style={{ paddingBottom: "200px" }}>
+      <Toaster position="top-right" reverseOrder={false} />
       <SearchBar handleChangeQuery={handleChangeQuery} />
       {isError && <ErrorMessage />}
       <ImageGallery images={filteredImages} onImageClick={openModal} />
